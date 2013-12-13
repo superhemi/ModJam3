@@ -1,6 +1,9 @@
 package com.superhemi.PirateCraft;
 
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.network.NetworkMod;
 import com.superhemi.PirateCraft.lib.Reference;
+
 /**
  * PirateCraft
  * 
