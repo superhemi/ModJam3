@@ -60,7 +60,7 @@ public class BaseForgePC {
       
     }
     
-    static int startEntityId = 300;
+    static int startEntityId = 30;
     
     public void init(FMLInitializationEvent event)
     {
