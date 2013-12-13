@@ -50,6 +50,7 @@ public class BaseForgePC {
 
         // Initialize mod items
         ModItems.init();
+      
     }
     public void load(FMLInitializationEvent event)
     {
