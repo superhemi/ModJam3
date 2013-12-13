@@ -3,7 +3,7 @@ package com.superhemi.PirateCraft.block;
 /**
  * PirateCraft
  * 
- * BaseForgePC
+ * ModBlocks
  * 
  * @author superhemi
  *@license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)

@@ -14,8 +14,8 @@ import net.minecraft.creativetab.CreativeTabs;
 
 public class CreativeTabPC extends CreativeTabs {
 
-	public CreativeTabPC(int par1, String par2Str) {
-		super(par1, par2Str);
+	public CreativeTabPC(int tabID, String tabLabel) {
+		super(tabID, tabLabel);
 	}
 
 }
