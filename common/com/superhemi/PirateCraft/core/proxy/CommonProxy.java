@@ -12,7 +12,7 @@ package com.superhemi.PirateCraft.core.proxy;
 
 public class CommonProxy {
  
-	public void registerRenderers()
+	public void registerRendererThings()
 	{
 	}
 	

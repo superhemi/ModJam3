@@ -1,5 +1,11 @@
 package com.superhemi.PirateCraft.core.proxy;
 
+import com.superhemi.PirateCraft.client.model.ModelPirate;
+import com.superhemi.PirateCraft.client.renderer.entity.RenderPirate;
+import com.superhemi.PirateCraft.entity.EntityPirate;
+
+import cpw.mods.fml.client.registry.RenderingRegistry;
+
 /**
  * PirateCraft
  * 
@@ -12,8 +18,10 @@ package com.superhemi.PirateCraft.core.proxy;
 
 public class ClientProxy extends CommonProxy{
 
-	public void registerRenderers()
+	public void registerRendererThings()
 	{
-		
+		RenderingRegistry.registerEntityRenderingHandler(EntityPirate.class, new RenderPirate (new ModelPirate(), 0.5f));
 	}
+	
+	
 }
