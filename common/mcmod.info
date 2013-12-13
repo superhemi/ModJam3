@@ -1,18 +1,20 @@
 [
 {
-    "modid": "PirateCraft",
-    "name": "PirateCraft",
-    "description": "Fear the open Seas once more!",
-    "version": "0.0.1",
-    "mcversion": "1.6.4",
-    "url": "",
-    "updateUrl": "",
-    "authors": [ "superhemi" ],
-    "credits": "",
-    "logoFile": "",
-    "screenshots": [ ],
-    "parent": "",
-    "requiredMods": [ "Forge" ],
-    "dependencies": [  ]
+  "modid": "PiraCraft",
+  "name": "PirateCraft",
+  "description": "Fear the Seas once more!",
+  "version": "@VERSION@",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [
+    "superhemi",
+  ],
+  "credits": "By superhemi, ModJam3 Entry",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
 }
 ]
