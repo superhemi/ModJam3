@@ -2,6 +2,9 @@ package com.superhemi.PirateCraft;
 
 import net.minecraft.command.CommandHandler;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityEggInfo;
+import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.biome.BiomeGenBase;
 import cpw.mods.fml.common.Mod;
@@ -57,6 +60,8 @@ public class BaseForgePC {
       
     }
     
+    static int startEntityId = 300;
+    
     public void init(FMLInitializationEvent event)
     {
         int id =0;
@@ -67,7 +72,28 @@ public class BaseForgePC {
 
         LanguageRegistry.instance().addStringLocalization("entity.Pirate.name", "en_US","Pirate");
         
+        registerEntityEgg(EntityPirate.class, 0xffffff, 0x000000);
     }
+    
+    public static int getUniqueEntityId() 
+    {
+     do 
+     {
+      startEntityId++;
+     } 
+     while (EntityList.getStringFromID(startEntityId) != null);
+
+      return startEntityId;
+    }
+    
+    public static void registerEntityEgg(Class<? extends Entity> entity, int primaryColor, int secondaryColor) 
+    {
+     int id = getUniqueEntityId();
+     EntityList.IDtoClassMapping.put(id, entity);
+     EntityList.entityEggs.put(id, new EntityEggInfo(id, primaryColor, secondaryColor));
+    // this.setCreativeTab(BaseForgePC.tabsPC);
+    }
+    
     public void load(FMLInitializationEvent event)
     {
     	LanguageRegistry.instance().addStringLocalization("itemGroup.PiraCraft", "en_US", "PirateCraft");
