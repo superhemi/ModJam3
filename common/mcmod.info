@@ -1,0 +1,18 @@
+[
+{
+    "modid": "PirateCraft",
+    "name": "PirateCraft",
+    "description": "Fear the open Seas once more!",
+    "version": "0.0.1",
+    "mcversion": "1.6.4",
+    "url": "",
+    "updateUrl": "",
+    "authors": [ "superhemi" ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [ ],
+    "parent": "",
+    "requiredMods": [ "Forge" ],
+    "dependencies": [  ]
+}
+]
