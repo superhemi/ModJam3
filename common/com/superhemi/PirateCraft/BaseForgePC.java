@@ -9,10 +9,13 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
+import com.superhemi.PirateCraft.block.ModBlocks;
 import com.superhemi.PirateCraft.core.handlers.LocalizationHandler;
 import com.superhemi.PirateCraft.core.proxy.CommonProxy;
 import com.superhemi.PirateCraft.creativetab.CreativeTabPC;
+import com.superhemi.PirateCraft.item.ModItems;
 import com.superhemi.PirateCraft.lib.Reference;
 
 /**
@@ -41,10 +44,17 @@ public class BaseForgePC {
     	
     	// Load the localization files into the LanguageRegistry
     	LocalizationHandler.loadLanguages();
+    	
+        // Initialize mod blocks
+        ModBlocks.init();
+
+        // Initialize mod items
+        ModItems.init();
     }
     public void load(FMLInitializationEvent event)
     {
-    	
+    	LanguageRegistry.instance().addStringLocalization("itemGroup.PiraCraft", "en_US", "PirateCraft");
+
     }
 
 
