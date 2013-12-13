@@ -12,7 +12,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderPirate extends RenderLiving
 {
 
-	private static final ResourceLocation pirateTextures  = new ResourceLocation("textures/entity/ModelPirate.png");
+	private static final ResourceLocation pirateTextures  = new ResourceLocation("PiraCraft:textures/entity/ModelPirate.png");
 	 
 	public RenderPirate(ModelBase par1ModelBase, float par2) 
 	{
@@ -23,7 +23,7 @@ public class RenderPirate extends RenderLiving
 	@Override
 	protected ResourceLocation getEntityTexture(Entity par1Entity)
 	{
-		return null;
+		return pirateTextures;
 	}
 
 }
