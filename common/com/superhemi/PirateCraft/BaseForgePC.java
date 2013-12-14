@@ -70,7 +70,7 @@ public class BaseForgePC {
         int id =0;
         EntityRegistry.registerModEntity(EntityPirate.class, "Pirate", id, this, 80, 1, true);
         id++;
-        EntityRegistry.addSpawn(EntityPirate.class, 100, 2, 5, EnumCreatureType.creature, BiomeGenBase.forest);             
+        EntityRegistry.addSpawn(EntityPirate.class, 80, 2, 5, EnumCreatureType.creature, BiomeGenBase.plains);             
         proxy.registerRendererThings();
 
         LanguageRegistry.instance().addStringLocalization("entity.Pirate.name", "en_US","Pirate");

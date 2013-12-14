@@ -9,13 +9,14 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.ResourceLocation;
 
 @SideOnly(Side.CLIENT)
 public class RenderPirate extends RenderLiving
 {
 
-	private static final ResourceLocation pirateTextures  = new ResourceLocation("piracraft:textures/entity/ModelPirate.png");
+	private static final ResourceLocation pirateTextures  = new ResourceLocation("piracraft", "textures/entity/ModelPirate.png");
 	 
 	protected ModelPirate model;
 	
@@ -32,10 +33,10 @@ public class RenderPirate extends RenderLiving
 
     } 
 
-
+    @Override
     public void doRenderLiving(EntityLiving par1EntityLiving, double par2, double par4, double par6, float par8, float par9)
     {
-        PirateRender((EntityPirate)par1EntityLiving, par2, par4, par6, par8, par9);
+        super.doRenderLiving(par1EntityLiving, par2, par4, par6, par8, par9);
 
 
     }
@@ -46,7 +47,12 @@ public class RenderPirate extends RenderLiving
     PirateRender((EntityPirate)par1Entity, par2, par4, par6, par8, par9);
 
     }
-    
+ 
+    @Override
+    protected int shouldRenderPass (EntityLivingBase par1EntityLiving, int par2, float par3)
+    {
+        return this.shouldRenderPass((EntityPirate) par1EntityLiving, par2, par3);
+    }
 	@Override
 	protected ResourceLocation getEntityTexture(Entity par1Entity)
 	{
