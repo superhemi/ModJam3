@@ -10,6 +10,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.Mod.Item;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -44,6 +45,8 @@ public class BaseForgePC {
 
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
     public static CommonProxy proxy;
+    
+    public static Item customSpawner;
 
     public static CreativeTabs tabsPC = new CreativeTabPC(CreativeTabs.getNextID(), Reference.MOD_ID);
 
@@ -71,6 +74,8 @@ public class BaseForgePC {
         LanguageRegistry.instance().addStringLocalization("entity.Pirate.name", "en_US","Pirate");
         
         registerEntityEgg(EntityPirate.class, 0xffffff, 0x000000);
+        
+        customSpawner = new customSpawner(1016).setUnlocalizedName("customSpawner").setCreativeTab(this.tabsPC);
     }
     
     public static int getUniqueEntityId() 
@@ -90,7 +95,6 @@ public class BaseForgePC {
      int id = getUniqueEntityId();
      EntityList.IDtoClassMapping.put(id, entity);
      EntityList.entityEggs.put(id, new EntityEggInfo(id, primaryColor, secondaryColor));
-    // this.setCreativeTab(BaseForgePC.tabsPC);
     }
     
     public void load(FMLInitializationEvent event)
