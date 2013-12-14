@@ -59,9 +59,7 @@ public class BaseForgePC {
         ModItems.init();
       
     }
-    
-    static int startEntityId = 30;
-    
+      
     public void init(FMLInitializationEvent event)
     {
         int id =0;
@@ -77,13 +75,14 @@ public class BaseForgePC {
     
     public static int getUniqueEntityId() 
     {
+    	int EntityId = 300;
      do 
      {
-      startEntityId++;
+      EntityId++;
      } 
-     while (EntityList.getStringFromID(startEntityId) != null);
+     while (EntityList.getStringFromID(EntityId) != null);
 
-      return startEntityId;
+      return EntityId;
     }
     
     public static void registerEntityEgg(Class<? extends Entity> entity, int primaryColor, int secondaryColor) 
