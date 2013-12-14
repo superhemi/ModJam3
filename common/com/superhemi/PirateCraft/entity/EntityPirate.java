@@ -1,5 +1,7 @@
 package com.superhemi.PirateCraft.entity;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
@@ -26,9 +28,13 @@ public class EntityPirate extends EntityMob{
 	public EntityPirate(World par1World) 
 	{
 		super(par1World);
-		//this.setEntityHealth(this.func_110138_aP())
-        this.setSize(0.9f, 1.3f);
-        this.setHealth(5f);
+	}
+	@SideOnly(Side.CLIENT)
+	public void handHealthUpdate(byte par1){
+		if(par1 == 16){
+			this.worldObj.playSound(this.posX + 0.5D, this.posZ + 0.5D, newPosX, "mob.zombie.remedy", 1.0F + this.rand.nextFloat(), this.rand.nextFloat() * 0.7F + 0.3F, false);
+		} else
+			super.handleHealthUpdate(par1);
 	}
 	public void applyEntityAttributes()
 	{
