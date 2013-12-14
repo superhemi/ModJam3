@@ -42,7 +42,7 @@ public class EntityPirate extends EntityMob{
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(20.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.followRange).setAttribute(32.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setAttribute(0.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.78D);
+		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.70D);
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(24.0D);
 	}
     
