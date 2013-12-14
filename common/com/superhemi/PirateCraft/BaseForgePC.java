@@ -54,7 +54,7 @@ public class BaseForgePC {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event){
     	
-      	    	
+      	    
         // Initialize mod blocks
         ModBlocks.init();
 
