@@ -1,16 +1,14 @@
 [
 {
   "modid": "PiraCraft",
-  "name": "PirateCraft",
+  "name": "Pirate-Craft",
   "description": "Fear the Seas once more!",
   "version": "@VERSION@",
   "url": "",
   "updateUrl": "",
-  "authorList": [
-    "superhemi",
-  ],
+  "authors": [ "superhemi" ],
   "credits": "By superhemi, ModJam3 Entry",
-  "logoFile": "",
+  "logoFile": "/assets/piracraft/textures/logo/logo.png",
   "screenshots": [
   ],
   "parent":"",

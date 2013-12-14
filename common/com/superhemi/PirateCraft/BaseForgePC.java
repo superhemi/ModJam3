@@ -1,6 +1,5 @@
 package com.superhemi.PirateCraft;
 
-import net.minecraft.command.CommandHandler;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityEggInfo;
@@ -18,7 +17,6 @@ import com.superhemi.PirateCraft.lib.Reference;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.Mod.Item;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
@@ -49,6 +47,8 @@ public class BaseForgePC {
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
     public static CommonProxy proxy;
     
+    static int startEntityId = 300;
+    
     public static CreativeTabs tabsPC = new CreativeTabPC(CreativeTabs.getNextID(), Reference.MOD_ID);
 
     @EventHandler
@@ -60,6 +60,8 @@ public class BaseForgePC {
 
         // Initialize mod items
         ModItems.init();
+        
+
       
     }
       
@@ -75,32 +77,32 @@ public class BaseForgePC {
         
         registerEntityEgg(EntityPirate.class, 0xffffff, 0x000000);
         
-        LanguageRegistry.instance().addStringLocalization("itemGroup.PiraCraft", "en_US", "PirateCraft");
-        
     }
     
     public static int getUniqueEntityId() 
     {
-    	int EntityId = 300;
-     do 
-     {
-      EntityId++;
-     } 
-     while (EntityList.getStringFromID(EntityId) != null);
-
-      return EntityId;
-    }
-    
-    public static void registerEntityEgg(Class<? extends Entity> entity, int primaryColor, int secondaryColor) 
+    do 
     {
-     int id = getUniqueEntityId();
-     EntityList.IDtoClassMapping.put(id, entity);
-     EntityList.entityEggs.put(id, new EntityEggInfo(id, primaryColor, secondaryColor));
+    startEntityId++;
+    } 
+    while (EntityList.getStringFromID(startEntityId) != null);
+
+    return startEntityId;
     }
+       
+    @SuppressWarnings("unchecked")
+	public static void registerEntityEgg(Class<? extends Entity> entity, int primaryColor, int secondaryColor) 
+    {
+       int id = getUniqueEntityId();
+       EntityList.IDtoClassMapping.put(id, entity);
+       EntityList.entityEggs.put(id, new EntityEggInfo(id, primaryColor, secondaryColor));
+    }	
+
     @EventHandler
     public void load(FMLInitializationEvent event)
     {
-    	
+        
+    
     }
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) 
