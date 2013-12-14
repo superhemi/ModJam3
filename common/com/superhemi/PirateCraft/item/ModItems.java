@@ -4,6 +4,7 @@ import com.superhemi.PirateCraft.lib.ItemIds;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -21,11 +22,13 @@ public class ModItems {
 	
 	/* Mod item instances */
 	public static Item Bag;
-	
-		
+	public static Item BoardAxe;
+
+			
 	public static void init() {
 		
 		Bag = new ItemBag(ItemIds.BAG_DEFAULT);
+		BoardAxe = new ItemBoardAxe(ItemIds.BOARDAXE_DEFAULT, EnumToolMaterial.WOOD);
 		
 		GameRegistry.addShapedRecipe(new ItemStack(Bag), new Object[] {"xxx","x x","xxx", Character.valueOf('x'), Block.cloth});
 		
