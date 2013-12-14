@@ -7,8 +7,9 @@ import com.superhemi.PirateCraft.client.model.ModelPirate;
 import com.superhemi.PirateCraft.client.renderer.entity.RenderPirate;
 import com.superhemi.PirateCraft.entity.EntityPirate;
 
-import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.registry.EntityRegistry;
 
 /**
  * PirateCraft
@@ -21,9 +22,12 @@ import cpw.mods.fml.client.registry.RenderingRegistry;
  */
 
 public class ClientProxy extends CommonProxy{
-
-
-    
+	
+	public void init(FMLInitializationEvent event)
+    {
+	EntityRegistry.addSpawn(EntityPirate.class, 20, 10, 20, EnumCreatureType.monster, BiomeGenBase.biomeList);
+    }
+	
 	public void registerRendererThings()
 	{
 		RenderingRegistry.registerEntityRenderingHandler(EntityPirate.class, new RenderPirate (new ModelPirate(), 0.5f));
