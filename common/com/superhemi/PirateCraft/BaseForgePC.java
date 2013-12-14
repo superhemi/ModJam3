@@ -47,8 +47,21 @@ public class BaseForgePC {
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
     public static CommonProxy proxy;
     
-    static int startEntityId = 300;
-    
+    public static int startEntityId = 300;
+    public static int getUniqueEntityId() {
+        do {
+            startEntityId++;
+           } 
+           while (EntityList.getStringFromID(startEntityId) != null);
+           return startEntityId++;
+       }
+    public static void registerEntityEgg(Class<? extends Entity> entity, int primaryColor, int secondaryColor) 
+    {
+       int id = getUniqueEntityId();
+       EntityList.IDtoClassMapping.put(id, entity);
+       EntityList.entityEggs.put(id, new EntityEggInfo(id, primaryColor, secondaryColor));
+    }
+   
     public static CreativeTabs tabsPC = new CreativeTabPC(CreativeTabs.getNextID(), Reference.MOD_ID);
 
     @EventHandler
@@ -60,44 +73,21 @@ public class BaseForgePC {
 
         // Initialize mod items
         ModItems.init();
-        
-
       
     }
       
     public void init(FMLInitializationEvent event)
     {
-        int id =0;
-        EntityRegistry.registerModEntity(EntityPirate.class, "Pirate", id, this, 80, 1, true);
-        id++;
-        EntityRegistry.addSpawn(EntityPirate.class, 80, 2, 5, EnumCreatureType.creature, BiomeGenBase.plains);             
+        EntityRegistry.registerGlobalEntityID(EntityPirate.class, "Pirate", 1);
+        EntityRegistry.addSpawn(EntityPirate.class, 50, 1, 20, EnumCreatureType.monster);
+        EntityRegistry.findGlobalUniqueEntityId();
+        registerEntityEgg(EntityPirate.class, 0xffffff, 0x000000);
         proxy.registerRendererThings();
 
         LanguageRegistry.instance().addStringLocalization("entity.Pirate.name", "en_US","Pirate");
-        
-        registerEntityEgg(EntityPirate.class, 0xffffff, 0x000000);
-        
+                
     }
     
-    public static int getUniqueEntityId() 
-    {
-    do 
-    {
-    startEntityId++;
-    } 
-    while (EntityList.getStringFromID(startEntityId) != null);
-
-    return startEntityId;
-    }
-       
-    @SuppressWarnings("unchecked")
-	public static void registerEntityEgg(Class<? extends Entity> entity, int primaryColor, int secondaryColor) 
-    {
-       int id = getUniqueEntityId();
-       EntityList.IDtoClassMapping.put(id, entity);
-       EntityList.entityEggs.put(id, new EntityEggInfo(id, primaryColor, secondaryColor));
-    }	
-
     @EventHandler
     public void load(FMLInitializationEvent event)
     {
