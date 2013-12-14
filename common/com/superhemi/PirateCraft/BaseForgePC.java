@@ -7,24 +7,27 @@ import net.minecraft.entity.EntityEggInfo;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.biome.BiomeGenBase;
+
+import com.superhemi.PirateCraft.block.ModBlocks;
+import com.superhemi.PirateCraft.core.proxy.CommonProxy;
+import com.superhemi.PirateCraft.creativetab.CreativeTabPC;
+import com.superhemi.PirateCraft.entity.EntityPirate;
+import com.superhemi.PirateCraft.item.ModItems;
+import com.superhemi.PirateCraft.lib.Reference;
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod.Item;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-import com.superhemi.PirateCraft.block.ModBlocks;
-import com.superhemi.PirateCraft.core.handlers.LocalizationHandler;
-import com.superhemi.PirateCraft.core.proxy.CommonProxy;
-import com.superhemi.PirateCraft.creativetab.CreativeTabPC;
-import com.superhemi.PirateCraft.entity.EntityPirate;
-import com.superhemi.PirateCraft.item.ModItems;
-import com.superhemi.PirateCraft.lib.Reference;
+
 
 /**
  * PirateCraft
@@ -50,11 +53,10 @@ public class BaseForgePC {
 
     public static CreativeTabs tabsPC = new CreativeTabPC(CreativeTabs.getNextID(), Reference.MOD_ID);
 
+    @EventHandler
     public void preInit(FMLPreInitializationEvent event){
     	
-    	// Load the localization files into the LanguageRegistry
-    	LocalizationHandler.loadLanguages();
-    	
+      	    	
         // Initialize mod blocks
         ModBlocks.init();
 
@@ -68,14 +70,16 @@ public class BaseForgePC {
         int id =0;
         EntityRegistry.registerModEntity(EntityPirate.class, "Pirate", id, this, 80, 1, true);
         id++;
-        EntityRegistry.addSpawn(EntityPirate.class, 100, 2, 5, EnumCreatureType.creature, BiomeGenBase.biomeList);             
+        EntityRegistry.addSpawn(EntityPirate.class, 100, 2, 5, EnumCreatureType.creature, BiomeGenBase.forest);             
         proxy.registerRendererThings();
 
         LanguageRegistry.instance().addStringLocalization("entity.Pirate.name", "en_US","Pirate");
         
         registerEntityEgg(EntityPirate.class, 0xffffff, 0x000000);
         
-        customSpawner = new customSpawner(1016).setUnlocalizedName("customSpawner").setCreativeTab(this.tabsPC);
+        LanguageRegistry.instance().addStringLocalization("itemGroup.PiraCraft", "en_US", "PirateCraft");
+        
+        //customSpawner = new customSpawner(1016).setUnlocalizedName("customSpawner").setCreativeTab(this.tabsPC);
     }
     
     public static int getUniqueEntityId() 
@@ -96,12 +100,15 @@ public class BaseForgePC {
      EntityList.IDtoClassMapping.put(id, entity);
      EntityList.entityEggs.put(id, new EntityEggInfo(id, primaryColor, secondaryColor));
     }
-    
+    @EventHandler
     public void load(FMLInitializationEvent event)
     {
-    	LanguageRegistry.instance().addStringLocalization("itemGroup.PiraCraft", "en_US", "PirateCraft");
-
+    	
     }
-
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent event) 
+    {
+  
+    }
 
 }
