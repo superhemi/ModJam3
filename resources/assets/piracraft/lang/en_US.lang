@@ -1,2 +1,5 @@
+# Item localizations
+item.piracraft:Bag.name=Bag
+
 # Creative Tab localizations
-itemGroup.PiraCraft=PirateCraft
+itemGroup.PiraCraft=Pirate-Craft
