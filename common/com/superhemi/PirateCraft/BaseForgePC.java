@@ -49,8 +49,6 @@ public class BaseForgePC {
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
     public static CommonProxy proxy;
     
-    public static Item customSpawner;
-
     public static CreativeTabs tabsPC = new CreativeTabPC(CreativeTabs.getNextID(), Reference.MOD_ID);
 
     @EventHandler
@@ -79,7 +77,6 @@ public class BaseForgePC {
         
         LanguageRegistry.instance().addStringLocalization("itemGroup.PiraCraft", "en_US", "PirateCraft");
         
-        //customSpawner = new customSpawner(1016).setUnlocalizedName("customSpawner").setCreativeTab(this.tabsPC);
     }
     
     public static int getUniqueEntityId() 
