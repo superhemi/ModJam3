@@ -78,7 +78,7 @@ public class BaseForgePC {
     public void init(FMLInitializationEvent event)
     {
         EntityRegistry.registerGlobalEntityID(EntityPirate.class, "Pirate", 1);
-        EntityRegistry.addSpawn(EntityPirate.class, 50, 1, 20, EnumCreatureType.monster, BiomeGenBase.biomeList);
+        EntityRegistry.addSpawn(EntityPirate.class, 50, 1, 20, EnumCreatureType.monster, BiomeGenBase.plains, BiomeGenBase.desert, BiomeGenBase.forest);
         EntityRegistry.findGlobalUniqueEntityId();
         registerEntityEgg(EntityPirate.class, 0xffffff, 0x000000);
         proxy.registerRendererThings();

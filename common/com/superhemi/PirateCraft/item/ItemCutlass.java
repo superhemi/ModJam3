@@ -34,6 +34,8 @@ public class ItemCutlass extends Item
 		this.setUnlocalizedName(Strings.RESOURCE_PREFIX + Strings.CUTLASS_NAME);
         this.setCreativeTab(BaseForgePC.tabsPC);
         this.weaponDamage = 6.0F + par2EnumToolMaterial.getDamageVsEntity();
+        this.setTextureName(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
+        
     }
 
     public float func_82803_g()

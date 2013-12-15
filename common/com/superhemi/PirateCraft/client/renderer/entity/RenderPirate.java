@@ -16,7 +16,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderPirate extends RenderLiving
 {
 
-	private static final ResourceLocation pirateTextures  = new ResourceLocation("piracraft", "textures/entity/ModelPirate.png");
+	private static final ResourceLocation pirateTextures  = new ResourceLocation("textures/entity/ModelPirate.png");
 	 
 	protected ModelPirate model;
 	
