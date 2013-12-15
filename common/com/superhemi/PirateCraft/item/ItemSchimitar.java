@@ -31,9 +31,10 @@ public class ItemSchimitar extends Item
         this.toolMaterial = par2EnumToolMaterial;
         this.maxStackSize = 1;
         this.setMaxDamage(par2EnumToolMaterial.getMaxUses());
-		this.setUnlocalizedName(Strings.RESOURCE_PREFIX + Strings.SCHIMITAR_NAME);
+		this.setUnlocalizedName(Strings.RESOURCE_PREFIX + Strings.SCIMITAR_NAME);
         this.setCreativeTab(BaseForgePC.tabsPC);
         this.weaponDamage = 7.0F + par2EnumToolMaterial.getDamageVsEntity();
+        this.setTextureName(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
     }
 
     public float func_82803_g()
