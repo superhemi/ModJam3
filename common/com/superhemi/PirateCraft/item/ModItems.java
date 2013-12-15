@@ -35,6 +35,8 @@ public class ModItems {
 		BoardAxe = new ItemBoardAxe(ItemIds.BOARDAXE_DEFAULT, EnumToolMaterial.IRON);
 		Cutlass = new ItemCutlass(ItemIds.CUTLASS_DEFAULT, EnumToolMaterial.EMERALD);
 		Dagger = new ItemDagger(ItemIds.DAGGER_DEFAULT, EnumToolMaterial.IRON);
+		Dirk = new ItemDirk(ItemIds.DIRK_DEFAULT, EnumToolMaterial.IRON);
+		Schimitar = new ItemSchimitar(ItemIds.SCHIMITAR_DEFAULT, EnumToolMaterial.EMERALD);
 		
 		GameRegistry.addShapedRecipe(new ItemStack(Bag), new Object[] {"xxx","x x","xxx", Character.valueOf('x'), Block.cloth});
 		
