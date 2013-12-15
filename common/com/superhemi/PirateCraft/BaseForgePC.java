@@ -8,6 +8,8 @@ import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.biome.BiomeGenBase;
 
 import com.superhemi.PirateCraft.block.ModBlocks;
+import com.superhemi.PirateCraft.client.model.ModelPirate;
+import com.superhemi.PirateCraft.client.renderer.entity.RenderPirate;
 import com.superhemi.PirateCraft.core.proxy.CommonProxy;
 import com.superhemi.PirateCraft.creativetab.CreativeTabPC;
 import com.superhemi.PirateCraft.entity.Entities;
@@ -15,6 +17,7 @@ import com.superhemi.PirateCraft.entity.EntityPirate;
 import com.superhemi.PirateCraft.item.ModItems;
 import com.superhemi.PirateCraft.lib.Reference;
 
+import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -42,26 +45,27 @@ public class BaseForgePC {
 
     @Instance(Reference.MOD_ID)
     public static BaseForgePC instance;
+    
+    static int startEntityId = 300;
+    
+    public static int getUniqueEntityId() {
+        do {
+                startEntityId++;
+                }
+        while(EntityList.getStringFromID(startEntityId) != null);
+                return startEntityId++;
+                }
+                
+        public static void registerEntityEgg(Class<? extends Entity> entity, int primaryColor, int secondaryColor) {
+                int id = getUniqueEntityId();
+                EntityList.IDtoClassMapping.put(id, entity);
+                EntityList.entityEggs.put(id, new EntityEggInfo(id, primaryColor, secondaryColor));
+                }
+
 
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
     public static CommonProxy proxy;
-    
-    public static int startEntityId = 300;
-    public static int getUniqueEntityId() {
-        do {
-            startEntityId++;
-           } 
-           while (EntityList.getStringFromID(startEntityId) != null);
-           return startEntityId++;
-       }
-    @SuppressWarnings("unchecked")
-	public static void registerEntityEgg(Class<? extends Entity> entity, int primaryColor, int secondaryColor) 
-    {
-       int id = getUniqueEntityId();
-       EntityList.IDtoClassMapping.put(id, entity);
-       EntityList.entityEggs.put(id, new EntityEggInfo(id, primaryColor, secondaryColor));
-    }
-   
+       
     public static CreativeTabs tabsPC = new CreativeTabPC(CreativeTabs.getNextID(), Reference.MOD_ID);
 
     @EventHandler
@@ -79,13 +83,14 @@ public class BaseForgePC {
     }
       
     public void init(FMLInitializationEvent event)
-    {
-        EntityRegistry.registerGlobalEntityID(EntityPirate.class, "Pirate", 1);
-        EntityRegistry.addSpawn(EntityPirate.class, 50, 1, 20, EnumCreatureType.monster, BiomeGenBase.plains, BiomeGenBase.desert, BiomeGenBase.forest);
+    {        
+        EntityRegistry.registerGlobalEntityID(EntityPirate.class, "Pirate", EntityRegistry.findGlobalUniqueEntityId());
         EntityRegistry.findGlobalUniqueEntityId();
-        registerEntityEgg(EntityPirate.class, 0xffffff, 0x000000);
-        proxy.registerRendererThings();
+        EntityRegistry.addSpawn(EntityPirate.class, 5, 10, 20, EnumCreatureType.monster, BiomeGenBase.plains);
+        registerEntityEgg(EntityPirate.class, 0xffffff, 0xe3f3f3);
+        RenderingRegistry.registerEntityRenderingHandler(EntityPirate.class, new RenderPirate(new ModelPirate(), 0.3F));
         
+                
         EntityList.addMapping(EntityPirate.class, "Pirate", 101, 14342901, 8026845);
 
         LanguageRegistry.instance().addStringLocalization("entity.Pirate.name", "en_US","Pirate");
@@ -95,7 +100,7 @@ public class BaseForgePC {
     @EventHandler
     public void load(FMLInitializationEvent event)
     {
-        //NA
+        proxy.registerRendererThings();
     }
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) 

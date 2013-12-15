@@ -1,10 +1,10 @@
 package com.superhemi.PirateCraft.client.renderer.entity;
 
-import net.minecraft.client.renderer.entity.Render;
+import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.ResourceLocation;
-
-import org.lwjgl.opengl.GL11;
 
 import com.superhemi.PirateCraft.client.model.ModelPirate;
 import com.superhemi.PirateCraft.entity.EntityPirate;
@@ -13,42 +13,31 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class RenderPirate extends Render
+public class RenderPirate extends RenderLiving
 {
 
-	private static final ResourceLocation pirateTextures  = new ResourceLocation("textures/entity/ModelPirate.png");
-	 
-	protected ModelPirate model;
-	
-	public RenderPirate() 
-	{
-		shadowSize = 0.5f;
-		model = new ModelPirate();
-	}
-	
-	public void renderPirate(EntityPirate pirate, double x, double y, double z, float yaw, float partialTickTime)
-	{
-		GL11.glPushMatrix();
-		GL11.glTranslatef((float)x, (float)y, (float)z);
-		GL11.glRotatef(180.0F - yaw, 0.0F, 1.0F, 0.0F);
-		GL11.glScalef(-1.0F, -1.0F, 1.0F);
-		
-		func_110777_b(pirate);
-		
-		model.render(pirate, 0.0F, 0.0F, -0.0F, 0.0F, 0.0625F);
-		
-		GL11.glPopMatrix();
-    } 
+    protected ModelPirate model;
 
-	@Override
-	public void doRender(Entity entity, double x, double y, double z, float yaw, float partialTickTime)
-	{
-		this.renderPirate((EntityPirate)entity, x, y, z, yaw, partialTickTime);
-	}
-	@Override
-	protected ResourceLocation getEntityTexture(Entity par1Entity)
-	{
-		return pirateTextures;
-	}
+    public RenderPirate(ModelBase par1ModelBase, float par2) {
+            super(par1ModelBase, par2);
+            model = ((ModelPirate)mainModel);
+    }
+    
+    public void renderPirate(EntityPirate par1Entity, double par2, double par4, double par6, float par8, float par9) {
+            super.doRenderLiving(par1Entity, par2, par4, par6, par8, par9);
+    }
+    
+    public void doRenderLiving(EntityLiving par1EntityLiving, double par2, double par4, double par6, float par8, float par9) {
+            renderPirate((EntityPirate)par1EntityLiving, par2, par4, par6, par8, par9);
+    }
+    
+    @Override
+    public void doRender(Entity entity, double d0, double d1, double d2, float f, float f1) {
+            renderPirate((EntityPirate)entity, d0, d1, d2, f, f1);
+    }
 
+    @Override
+    protected ResourceLocation getEntityTexture(Entity entity) {
+            return new ResourceLocation ("piracraft:textures/entity/ModelPirate.png");
+    }
 }
