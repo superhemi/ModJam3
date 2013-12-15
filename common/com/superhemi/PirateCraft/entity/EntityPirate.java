@@ -22,7 +22,7 @@ import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.event.Event.Result;
 import net.minecraftforge.event.entity.living.ZombieEvent.SummonAidEvent;
 
-public class EntityPirate extends EntityMob{
+public class EntityPirate extends EntityMob {
 
 	protected static final Attribute field_110186_bp = (new RangedAttribute("zombie.spawnReinforcements", 0.0D, 0.0D, 1.0D)).func_111117_a("Spawn Reinforcements Chance");
 	public EntityPirate(World par1World) 
