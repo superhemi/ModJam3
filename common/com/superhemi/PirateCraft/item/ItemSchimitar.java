@@ -2,6 +2,7 @@ package com.superhemi.PirateCraft.item;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -19,28 +20,28 @@ import com.superhemi.PirateCraft.lib.Strings;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemSchimitar extends Item {
-	
+public class ItemSchimitar extends Item
+{
     private float weaponDamage;
     private final EnumToolMaterial toolMaterial;
 
-	public ItemSchimitar(int par1, EnumToolMaterial par2EnumToolMaterial)
-	{
-		super(par1);
+    public ItemSchimitar(int par1, EnumToolMaterial par2EnumToolMaterial)
+    {
+        super(par1);
+        this.toolMaterial = par2EnumToolMaterial;
+        this.maxStackSize = 1;
+        this.setMaxDamage(par2EnumToolMaterial.getMaxUses());
 		this.setUnlocalizedName(Strings.RESOURCE_PREFIX + Strings.SCHIMITAR_NAME);
         this.setCreativeTab(BaseForgePC.tabsPC);
-        this.setTextureName(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
         this.weaponDamage = 7.0F + par2EnumToolMaterial.getDamageVsEntity();
-        maxStackSize = 1;
-	}
-	
+    }
 
     public float func_82803_g()
     {
         return this.toolMaterial.getDamageVsEntity();
     }
 
-   public float getStrVsBlock(ItemStack par1ItemStack, Block par2Block)
+    public float getStrVsBlock(ItemStack par1ItemStack, Block par2Block)
     {
         if (par2Block.blockID == Block.web.blockID)
         {
@@ -71,7 +72,7 @@ public class ItemSchimitar extends Item {
 
     @SideOnly(Side.CLIENT)
 
-   public boolean isFull3D()
+    public boolean isFull3D()
     {
         return true;
     }
@@ -81,18 +82,18 @@ public class ItemSchimitar extends Item {
         return EnumAction.block;
     }
 
-   public int getMaxItemUseDuration(ItemStack par1ItemStack)
+    public int getMaxItemUseDuration(ItemStack par1ItemStack)
     {
         return 72000;
     }
 
-    public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
+     public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
     {
         par3EntityPlayer.setItemInUse(par1ItemStack, this.getMaxItemUseDuration(par1ItemStack));
         return par1ItemStack;
     }
 
-   public boolean canHarvestBlock(Block par1Block)
+    public boolean canHarvestBlock(Block par1Block)
     {
         return par1Block.blockID == Block.web.blockID;
     }
