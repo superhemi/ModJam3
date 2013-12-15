@@ -95,13 +95,12 @@ public class BaseForgePC {
     @EventHandler
     public void load(FMLInitializationEvent event)
     {
-        
-    
+        //NA
     }
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) 
     {
-  
+  //NA
     }
 
 }
