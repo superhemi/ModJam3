@@ -24,13 +24,17 @@ public class ModItems {
 	public static Item Bag;
 	public static Item BoardAxe;
 	public static Item Cutlass;
+	public static Item Dagger;
+	public static Item Dirk;
+	public static Item Schimitar;
 
 			
 	public static void init() {
 		
 		Bag = new ItemBag(ItemIds.BAG_DEFAULT);
-		BoardAxe = new ItemBoardAxe(ItemIds.BOARDAXE_DEFAULT, EnumToolMaterial.WOOD);
-		Cutlass = new ItemCutlass(ItemIds.CUTLASS_DEFAULT, EnumToolMaterial.WOOD);
+		BoardAxe = new ItemBoardAxe(ItemIds.BOARDAXE_DEFAULT, EnumToolMaterial.IRON);
+		Cutlass = new ItemCutlass(ItemIds.CUTLASS_DEFAULT, EnumToolMaterial.EMERALD);
+		Dagger = new ItemDagger(ItemIds.DAGGER_DEFAULT, EnumToolMaterial.IRON);
 		
 		GameRegistry.addShapedRecipe(new ItemStack(Bag), new Object[] {"xxx","x x","xxx", Character.valueOf('x'), Block.cloth});
 		

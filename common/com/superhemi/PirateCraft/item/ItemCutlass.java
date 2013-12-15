@@ -12,7 +12,7 @@ public class ItemCutlass extends ItemSword {
 		super(par1, par2EnumToolMaterial);
 		this.setUnlocalizedName(Strings.RESOURCE_PREFIX + Strings.CUTLASS_NAME);
         this.setCreativeTab(BaseForgePC.tabsPC);
-        this.setTextureName(Strings.RESOURCE_PREFIX + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
+        this.setTextureName(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
         maxStackSize = 1;
 	}
 

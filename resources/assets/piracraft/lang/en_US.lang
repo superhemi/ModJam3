@@ -1,6 +1,7 @@
 # Item localizations
 item.piracraft:Bag.name=Bag
 item.piracraft:Board Axe.name=Board Axe
+item.piracraft:Cutlass.name=Cutlass
 
 # Creative Tab localizations
 itemGroup.PiraCraft=Pirate-Craft

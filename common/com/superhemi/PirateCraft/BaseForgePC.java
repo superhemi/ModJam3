@@ -53,7 +53,8 @@ public class BaseForgePC {
            while (EntityList.getStringFromID(startEntityId) != null);
            return startEntityId++;
        }
-    public static void registerEntityEgg(Class<? extends Entity> entity, int primaryColor, int secondaryColor) 
+    @SuppressWarnings("unchecked")
+	public static void registerEntityEgg(Class<? extends Entity> entity, int primaryColor, int secondaryColor) 
     {
        int id = getUniqueEntityId();
        EntityList.IDtoClassMapping.put(id, entity);

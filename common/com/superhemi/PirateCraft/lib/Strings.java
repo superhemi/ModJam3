@@ -11,4 +11,5 @@ public class Strings {
 	public static final String BAG_NAME = "Bag";
 	public static final String BOARDAXE_NAME = "Board Axe";
 	public static final String CUTLASS_NAME = "Cutlass";
+	public static final String DAGGER_NAME = "Dagger";
 }
