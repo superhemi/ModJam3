@@ -14,4 +14,5 @@ public class Strings {
 	public static final String DAGGER_NAME = "Dagger";
 	public static final String DIRK_NAME = "Dirk";
 	public static final String SCIMITAR_NAME = "Scimitar";
+	public static final String GRAPESHOT_NAME = "GrapeShot";
 }

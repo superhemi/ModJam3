@@ -6,19 +6,15 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntitySnowball;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemSword;
-import net.minecraft.item.ItemTool;
 import net.minecraft.world.World;
 
 import com.google.common.collect.Multimap;
 import com.superhemi.PirateCraft.BaseForgePC;
-import com.superhemi.PirateCraft.entity.EntityDagger;
-import com.superhemi.PirateCraft.lib.ItemIds;
+import com.superhemi.PirateCraft.entity.EntityGrapeShot;
 import com.superhemi.PirateCraft.lib.Strings;
 
 import cpw.mods.fml.relauncher.Side;
@@ -91,20 +87,6 @@ public class ItemDagger extends Item {
     {
         return 72000;
     }
-    
-    @Override
-    public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
-    {
-    	   if(par3EntityPlayer.capabilities.isCreativeMode||par3EntityPlayer.inventory.consumeInventoryItem(ModItems.Dagger.itemID))
-    	   {
-    	     par2World.playSoundAtEntity(par3EntityPlayer, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
-    	     if (!par2World.isRemote)
-    	     {
-    	       par2World.spawnEntityInWorld(new EntityDagger(par2World, par3EntityPlayer));
-    	     }
-    	   }
-    	   return par1ItemStack;
-    	   }
     
     public boolean canHarvestBlock(Block par1Block)
     {

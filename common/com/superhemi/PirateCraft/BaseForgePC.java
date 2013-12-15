@@ -10,6 +10,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 import com.superhemi.PirateCraft.block.ModBlocks;
 import com.superhemi.PirateCraft.core.proxy.CommonProxy;
 import com.superhemi.PirateCraft.creativetab.CreativeTabPC;
+import com.superhemi.PirateCraft.entity.Entities;
 import com.superhemi.PirateCraft.entity.EntityPirate;
 import com.superhemi.PirateCraft.item.ModItems;
 import com.superhemi.PirateCraft.lib.Reference;
@@ -72,6 +73,8 @@ public class BaseForgePC {
 
         // Initialize mod items
         ModItems.init();
+        
+        Entities.init();
       
     }
       

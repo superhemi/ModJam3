@@ -26,7 +26,8 @@ public class ModItems {
 	public static Item Cutlass;
 	public static Item Dagger;
 	public static Item Dirk;
-	public static Item Schimitar;
+	public static Item Scimitar;
+	public static Item GrapeShot;
 
 			
 	public static void init() {
@@ -36,8 +37,8 @@ public class ModItems {
 		Cutlass = new ItemCutlass(ItemIds.CUTLASS_DEFAULT, EnumToolMaterial.EMERALD);
 		Dagger = new ItemDagger(ItemIds.DAGGER_DEFAULT, EnumToolMaterial.IRON);
 		Dirk = new ItemDirk(ItemIds.DIRK_DEFAULT, EnumToolMaterial.IRON);
-		Schimitar = new ItemSchimitar(ItemIds.SCHIMITAR_DEFAULT, EnumToolMaterial.EMERALD);
-		
+		Scimitar = new ItemSchimitar(ItemIds.SCHIMITAR_DEFAULT, EnumToolMaterial.EMERALD);
+		GrapeShot = new ItemGrapeShot(ItemIds.GRAPESHOT_DEFAULT);
 		GameRegistry.addShapedRecipe(new ItemStack(Bag), new Object[] {"xxx","x x","xxx", Character.valueOf('x'), Block.cloth});
 		
 	}
