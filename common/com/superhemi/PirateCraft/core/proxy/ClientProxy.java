@@ -33,7 +33,7 @@ public class ClientProxy extends CommonProxy{
 	public void initRenderers()
 	{
 		RenderingRegistry.registerEntityRenderingHandler(EntityPirate.class, new RenderPirate (new ModelPirate(), 0.5f));
-		RenderingRegistry.registerEntityRenderingHandler(EntityGrapeShot.class, new RenderGrapeShot());
+		//RenderingRegistry.registerEntityRenderingHandler(EntityGrapeShot.class, new RenderGrapeShot());
 	}
 	
 	

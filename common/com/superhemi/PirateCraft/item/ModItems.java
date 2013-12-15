@@ -39,6 +39,7 @@ public class ModItems {
 		Dirk = new ItemDirk(ItemIds.DIRK_DEFAULT, EnumToolMaterial.IRON);
 		Scimitar = new ItemSchimitar(ItemIds.SCHIMITAR_DEFAULT, EnumToolMaterial.EMERALD);
 		GrapeShot = new ItemGrapeShot(ItemIds.GRAPESHOT_DEFAULT);
+		
 		GameRegistry.addShapedRecipe(new ItemStack(Bag), new Object[] {"xxx","x x","xxx", Character.valueOf('x'), Block.cloth});
 		
 	}
