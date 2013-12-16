@@ -10,6 +10,7 @@ import com.superhemi.PirateCraft.lib.ItemIds;
 import com.superhemi.PirateCraft.spawn.customSpawner;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 /**
  * PirateCraft
@@ -44,6 +45,8 @@ public class ModItems {
 		Scimitar = new ItemSchimitar(ItemIds.SCHIMITAR_DEFAULT, EnumToolMaterial.EMERALD);
 		GrapeShot = new ItemGrapeShot(ItemIds.GRAPESHOT_DEFAULT);
 		customSpawner = new customSpawner(1016).setUnlocalizedName("customSpawner").setCreativeTab(BaseForgePC.tabsPC);
+		
+		LanguageRegistry.addName(customSpawner, "Spawn");
 		
 		GameRegistry.addShapedRecipe(new ItemStack(Bag), new Object[] {"xxx","x x","xxx", Character.valueOf('x'), Block.cloth});
 		

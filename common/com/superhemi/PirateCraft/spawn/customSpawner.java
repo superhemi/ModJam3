@@ -3,7 +3,6 @@ package com.superhemi.PirateCraft.spawn;
 import java.util.Iterator;
 import java.util.List;
 
-import net.minecraft.util.Icon;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -18,29 +17,27 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumMovingObjectType;
 import net.minecraft.util.Facing;
+import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
-
-import com.superhemi.PirateCraft.BaseForgePC;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class customSpawner extends Item 
+public class customSpawner extends Item
 {
-	@SideOnly(Side.CLIENT)
-	private Icon theIcon;
+    @SideOnly(Side.CLIENT)
+    private Icon theIcon;
 
-	public customSpawner(int par1) 
-	{
-		super(par1);
-		this.setHasSubtypes(true);
-		this.setCreativeTab(BaseForgePC.tabsPC);
-	}
-	
-	public String getItemDisplayName(ItemStack par1ItemStack)
+    public customSpawner(int par1)
+    {
+        super(par1);
+        this.setHasSubtypes(true);
+        this.setCreativeTab(CreativeTabs.tabMisc);
+    }
+
+    public String getItemDisplayName(ItemStack par1ItemStack)
     {
         String s = ("" + StatCollector.translateToLocal(this.getUnlocalizedName() + ".name")).trim();
         String s1 = customEntityList.getStringFromID(par1ItemStack.getItemDamage());
@@ -231,7 +228,6 @@ public class customSpawner extends Item
     public void registerIcons(IconRegister par1IconRegister)
     {
         super.registerIcons(par1IconRegister);
-        this.theIcon = par1IconRegister.registerIcon("piracraft:/textures/items/customSpawner_overlay");
+        this.theIcon = par1IconRegister.registerIcon(this.getIconString() + "_overlay");
     }
-
 }
