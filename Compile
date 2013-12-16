@@ -30,7 +30,7 @@
 
 16. Run the Reobfuscate script and ignore any errors.
 
-17. The compiled files will be in  ""foldername"/forge/mcp/reobf". Add the "folder to a new zip archive.
+17. The compiled files will be in  ""foldername"/forge/mcp/reobf". Add the "ModJam3 folder to a new zip archive.
 
 18. Find the assets folder: ""foldername"/forge/mcp/src/minecraft/assets". Add this to the same archive as in 17.
 
