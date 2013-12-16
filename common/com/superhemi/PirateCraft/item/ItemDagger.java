@@ -30,7 +30,7 @@ public class ItemDagger extends Item {
 		this.setMaxDamage(par2EnumToolMaterial.getMaxUses());
 		this.setUnlocalizedName(Strings.RESOURCE_PREFIX + Strings.DAGGER_NAME);
         this.setCreativeTab(BaseForgePC.tabsPC);
-        this.weaponDamage = 4.0F + par2EnumToolMaterial.getDamageVsEntity();
+        this.weaponDamage = 2.0F + par2EnumToolMaterial.getDamageVsEntity();
         this.setTextureName(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
 
 	}

@@ -1,0 +1,37 @@
+1. You must have Eclipse IDE.
+
+2. Download the Minecraft Forge source 1.6.4. The version used for this mod is 9.11.1.935.
+
+3. Extract the contents of the downloaded archive to an empty folder.
+
+4. Run the "install" script (this may take a while).
+
+5. Set the Eclipse workspace as ""foldername"/forge/mcp/eclipse"
+
+6. Download this mod as a zip.
+
+7. Extract the contents to a different folder.
+
+8. Inside the "common" folder will be a folder titled "com". Inside that will be a folder titled "superhemi". Inside that will be a folder titled "PirateCraft" or something like that. Create a package in the Eclipse workspace titled "com.superhemi.PirateCraft".
+
+9. There will be folders inside the "PirateCraft" folder. You will need to create packages for those as well (Example: com.superhemi.PirateCraft.block")
+
+10. Do the same for the assets folder (Example: resources.assets.piracraft.textures.items)
+
+11. Copy the Java files into their corresponding packages.
+
+12. Copy the textures into their corresponding packages.
+
+13. Check for errors and fix them.
+
+14. Save Eclipse.
+
+15. Navigate to ""foldername"/forge/mcp" and run the Recompile script. Ignore any errors.
+
+16. Run the Reobfuscate script and ignore any errors.
+
+17. The compiled files will be in  ""foldername"/forge/mcp/reobf". Add the "folder to a new zip archive.
+
+18. Find the assets folder: ""foldername"/forge/mcp/src/minecraft/assets". Add this to the same archive as in 17.
+
+19. That zip archive is now a functional mod.
