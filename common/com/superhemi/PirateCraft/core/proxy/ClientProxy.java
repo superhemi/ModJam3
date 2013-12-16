@@ -22,8 +22,9 @@ import cpw.mods.fml.client.registry.RenderingRegistry;
 public class ClientProxy extends CommonProxy{
 	
 	@Override
-	public void registerRenderThings()
+	public void init()
 	{
+		super.init();
 		RenderingRegistry.registerEntityRenderingHandler(EntityPirate.class, new RenderPirate (new ModelPirate(), 0.5f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityGrapeShot.class, new RenderSnowball(ModItems.GrapeShot));
 	}

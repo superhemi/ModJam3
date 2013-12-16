@@ -12,7 +12,7 @@ package com.superhemi.PirateCraft.block;
 
 public class ModBlocks {
 	
-	public static void init(){
+	public static void initBlocks(){
 		
 	}
 

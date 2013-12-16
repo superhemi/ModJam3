@@ -45,6 +45,7 @@ public class EntityLaunchedGrapeShot extends Entity implements IProjectile
 
     /** The amount of knockback an arrow applies when it hits a mob. */
     private int knockbackStrength;
+    
 
     public EntityLaunchedGrapeShot(World par1World)
     {

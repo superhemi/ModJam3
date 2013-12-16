@@ -9,6 +9,9 @@ import net.minecraft.world.World;
 
 public class EntityGrapeShot extends EntityThrowable
 {
+    private int explosionRadius = 2;
+    boolean flag = this.worldObj.getGameRules().getGameRuleBooleanValue("mobGriefing");
+
     public EntityGrapeShot(World par1World)
     {
         super(par1World);
@@ -48,6 +51,7 @@ public class EntityGrapeShot extends EntityThrowable
 
         if (!this.worldObj.isRemote)
         {
+        	this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, (float)this.explosionRadius, flag);
             this.setDead();
         }
     }

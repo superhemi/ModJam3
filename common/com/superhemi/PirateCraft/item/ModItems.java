@@ -35,7 +35,7 @@ public class ModItems {
 	public static Item customSpawner;
 
 			
-	public static void init() {
+	public static void initItems() {
 		
 		Bag = new ItemBag(ItemIds.BAG_DEFAULT);
 		BoardAxe = new ItemBoardAxe(ItemIds.BOARDAXE_DEFAULT, EnumToolMaterial.IRON);

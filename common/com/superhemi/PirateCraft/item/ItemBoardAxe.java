@@ -1,10 +1,10 @@
 package com.superhemi.PirateCraft.item;
 
-import com.superhemi.PirateCraft.BaseForgePC;
-import com.superhemi.PirateCraft.lib.Strings;
-
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemAxe;
+
+import com.superhemi.PirateCraft.BaseForgePC;
+import com.superhemi.PirateCraft.lib.Strings;
 
 public class ItemBoardAxe extends ItemAxe {
 
