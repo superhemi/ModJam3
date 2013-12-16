@@ -5,7 +5,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
@@ -14,7 +13,6 @@ import net.minecraft.world.World;
 
 import com.google.common.collect.Multimap;
 import com.superhemi.PirateCraft.BaseForgePC;
-import com.superhemi.PirateCraft.entity.EntityGrapeShot;
 import com.superhemi.PirateCraft.lib.Strings;
 
 import cpw.mods.fml.relauncher.Side;

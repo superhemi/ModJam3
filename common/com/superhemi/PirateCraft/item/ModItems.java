@@ -1,12 +1,15 @@
 package com.superhemi.PirateCraft.item;
 
-import com.superhemi.PirateCraft.lib.ItemIds;
-
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
+import com.superhemi.PirateCraft.BaseForgePC;
+import com.superhemi.PirateCraft.lib.ItemIds;
+import com.superhemi.PirateCraft.spawn.customSpawner;
+
+import cpw.mods.fml.common.registry.GameRegistry;
 
 /**
  * PirateCraft
@@ -28,6 +31,7 @@ public class ModItems {
 	public static Item Dirk;
 	public static Item Scimitar;
 	public static Item GrapeShot;
+	public static Item customSpawner;
 
 			
 	public static void init() {
@@ -39,6 +43,7 @@ public class ModItems {
 		Dirk = new ItemDirk(ItemIds.DIRK_DEFAULT, EnumToolMaterial.IRON);
 		Scimitar = new ItemSchimitar(ItemIds.SCHIMITAR_DEFAULT, EnumToolMaterial.EMERALD);
 		GrapeShot = new ItemGrapeShot(ItemIds.GRAPESHOT_DEFAULT);
+		customSpawner = new customSpawner(1016).setUnlocalizedName("customSpawner").setCreativeTab(BaseForgePC.tabsPC);
 		
 		GameRegistry.addShapedRecipe(new ItemStack(Bag), new Object[] {"xxx","x x","xxx", Character.valueOf('x'), Block.cloth});
 		

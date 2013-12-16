@@ -31,9 +31,9 @@ public class RenderGrapeShot extends Render
 		GL11.glRotatef(180.0F - yaw, 0.0F, 1.0F, 0.0F);
 		GL11.glScalef(-1.0F, -1.0F, 1.0F);
 		
-		func_110777_b(grapeshot);
+		//func_110777_b(grapeshot);
 		
-		model.render(grapeshot, 0.0F, 0.0F, -0.0F, 0.0F, 0.0625F);
+		//model.render(grapeshot, 0.0F, 0.0F, -0.0F, 0.0F, 0.0625F);
 		
 		GL11.glPopMatrix();
 	}

@@ -87,13 +87,13 @@ public class BaseForgePC {
         EntityRegistry.registerGlobalEntityID(EntityPirate.class, "Pirate", EntityRegistry.findGlobalUniqueEntityId());
         EntityRegistry.findGlobalUniqueEntityId();
         EntityRegistry.addSpawn(EntityPirate.class, 5, 10, 20, EnumCreatureType.monster, BiomeGenBase.plains);
-        registerEntityEgg(EntityPirate.class, 0xffffff, 0xe3f3f3);
+        //registerEntityEgg(EntityPirate.class, 0xffffff, 0xe3f3f3);
         RenderingRegistry.registerEntityRenderingHandler(EntityPirate.class, new RenderPirate(new ModelPirate(), 0.3F));
         
                 
         EntityList.addMapping(EntityPirate.class, "Pirate", 101, 14342901, 8026845);
 
-        LanguageRegistry.instance().addStringLocalization("entity.Pirate.name", "en_US","Pirate");
+        LanguageRegistry.instance().addStringLocalization("entity.Pirate.name", "Pirate");
                 
     }
     
