@@ -3,7 +3,7 @@
   "modid": "PiraCraft",
   "name": "Pirate-Craft",
   "description": "Fear the Seas once more!",
-  "version": "@VERSION@",
+  "version": "0.0.1",
   "url": "",
   "updateUrl": "",
   "authors": [ "superhemi" ],

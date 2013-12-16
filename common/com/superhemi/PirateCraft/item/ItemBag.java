@@ -10,7 +10,7 @@ public class ItemBag extends Item {
 		super(id);
 		this.setUnlocalizedName(Strings.RESOURCE_PREFIX + Strings.BAG_NAME);
         this.setCreativeTab(BaseForgePC.tabsPC);
-        this.setTextureName(Strings.RESOURCE_PREFIX + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
+        this.setTextureName(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
         maxStackSize = 1;
 	}
 

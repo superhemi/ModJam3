@@ -9,7 +9,7 @@ public class Strings {
 	
 	/* Item name constants */
 	public static final String BAG_NAME = "Bag";
-	public static final String BOARDAXE_NAME = "Board Axe";
+	public static final String BOARDAXE_NAME = "BoardAxe";
 	public static final String CUTLASS_NAME = "Cutlass";
 	public static final String DAGGER_NAME = "Dagger";
 	public static final String DIRK_NAME = "Dirk";

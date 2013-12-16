@@ -37,6 +37,7 @@ public class customSpawner extends Item
         super(par1);
         this.setHasSubtypes(true);
         this.setCreativeTab(BaseForgePC.tabsPC);
+        this.setTextureName(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
     }
 
     public String getItemDisplayName(ItemStack par1ItemStack)
