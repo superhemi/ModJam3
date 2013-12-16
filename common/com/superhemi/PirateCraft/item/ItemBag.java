@@ -19,22 +19,4 @@ public class ItemBag extends Item {
         maxStackSize = 1;
 	}
 
-	@Override
-	public boolean onItemUseFirst(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ)
-	{
-		if (!world.isRemote)
-		{
-			EntityPirate pirate = new EntityPirate(world);
-			
-			pirate.posX = x + 0.5;
-			pirate.posY = y + 1.5;
-			pirate.posZ = z + 0.5;
-			
-			world.spawnEntityInWorld(pirate);
-			
-			return true;
-		}else{
-		     return false;
-		}
-	}
 }

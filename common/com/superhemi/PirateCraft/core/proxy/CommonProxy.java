@@ -1,5 +1,10 @@
 package com.superhemi.PirateCraft.core.proxy;
 
+import com.superhemi.PirateCraft.core.handlers.ServerTickHandler;
+
+import cpw.mods.fml.common.registry.TickRegistry;
+import cpw.mods.fml.relauncher.Side;
+
 /**
  * PirateCraft
  * 
@@ -12,8 +17,14 @@ package com.superhemi.PirateCraft.core.proxy;
 
 public class CommonProxy {
  
-	public void registerRendererThings()
+	public void registerRenderThings()
 	{
+		
+	}
+	
+	public void registerServerTickHandler()
+	{
+		TickRegistry.registerTickHandler(new ServerTickHandler(), Side.SERVER);
 	}
 	
 }

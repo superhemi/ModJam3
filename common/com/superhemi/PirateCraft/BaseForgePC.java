@@ -100,7 +100,7 @@ public class BaseForgePC {
     @EventHandler
     public void load(FMLInitializationEvent event)
     {
-        proxy.registerRendererThings();
+        proxy.registerRenderThings();
     }
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) 

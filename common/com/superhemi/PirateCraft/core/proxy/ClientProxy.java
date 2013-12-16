@@ -25,16 +25,11 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 
 public class ClientProxy extends CommonProxy{
 	
-	public void init(FMLInitializationEvent event)
-    {
-	EntityRegistry.addSpawn(EntityPirate.class, 20, 10, 20, EnumCreatureType.monster, BiomeGenBase.biomeList);
-    }
-	
-	public void initRenderers()
+	@Override
+	public void registerRenderThings()
 	{
 		RenderingRegistry.registerEntityRenderingHandler(EntityPirate.class, new RenderPirate (new ModelPirate(), 0.5f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityGrapeShot.class, new RenderGrapeShot());
 	}
-	
 	
 }
