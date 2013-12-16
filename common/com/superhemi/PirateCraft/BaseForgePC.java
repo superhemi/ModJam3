@@ -62,6 +62,7 @@ public class BaseForgePC {
                 return startEntityId++;
                 }
                 
+		@SuppressWarnings("unchecked")
 		public static void registerEntityEgg(Class<? extends Entity> entity, int primaryColor, int secondaryColor) {
                 int id = getUniqueEntityId();
                 EntityList.IDtoClassMapping.put(id, entity);
