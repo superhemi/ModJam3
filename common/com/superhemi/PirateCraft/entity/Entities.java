@@ -9,7 +9,7 @@ public class Entities {
 	public static void init()
 	{
 		EntityRegistry.registerModEntity(EntityLaunchedGrapeShot.class, "GrapeShot", 0, BaseForgePC.instance, 80, 3, true);
-		EntityRegistry.registerModEntity(EntityPirate.class, "Pirate", 0, BaseForgePC.instance, 80, 3, true);
+		EntityRegistry.registerModEntity(EntityPirate.class, "Pirate", 1, BaseForgePC.instance, 80, 3, true);
 	}
 
 }
