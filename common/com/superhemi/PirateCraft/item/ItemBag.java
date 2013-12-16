@@ -1,12 +1,7 @@
 package com.superhemi.PirateCraft.item;
 
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
-
 import com.superhemi.PirateCraft.BaseForgePC;
-import com.superhemi.PirateCraft.entity.EntityPirate;
 import com.superhemi.PirateCraft.lib.Strings;
 
 public class ItemBag extends Item {

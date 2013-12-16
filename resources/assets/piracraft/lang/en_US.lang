@@ -5,6 +5,10 @@ item.piracraft:Cutlass.name=Cutlass
 item.piracraft:Dagger.name=Dagger
 item.piracraft:Dirk.name=Dirk
 item.piracraft:Scimitar.name=Scimitar
+item.piracraft:GrapeShot.name=GrapeShot
+
+# Entity localizations
+entity.Pirate.name=Pirate
 
 # Creative Tab localizations
 itemGroup.PiraCraft=Pirate-Craft

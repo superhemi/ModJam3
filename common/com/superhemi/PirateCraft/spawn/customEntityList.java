@@ -14,32 +14,31 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
-
 import cpw.mods.fml.common.FMLLog;
 
 public class customEntityList {
 	/** Provides a mapping between entity classes and a string */
-    public static Map stringToClassMapping = new HashMap();
+    public static Map<String, Class<?>> stringToClassMapping = new HashMap<String, Class<?>>();
 
     /** Provides a mapping between a string and an entity classes */
-    public static Map classToStringMapping = new HashMap();
+    public static Map<Class<?>, String> classToStringMapping = new HashMap<Class<?>, String>();
 
     /** provides a mapping between an entityID and an Entity Class */
-    public static Map IDtoClassMapping = new HashMap();
+    public static Map<Integer, Class<?>> IDtoClassMapping = new HashMap<Integer, Class<?>>();
 
     /** provides a mapping between an Entity Class and an entity ID */
-    private static Map classToIDMapping = new HashMap();
+    private static Map<Class<?>, Integer> classToIDMapping = new HashMap<Class<?>, Integer>();
 
     /** Maps entity names to their numeric identifiers */
-    private static Map stringToIDMapping = new HashMap();
+    private static Map<String, Integer> stringToIDMapping = new HashMap<String, Integer>();
 
     /** This is a HashMap of the Creative Entity Eggs/Spawners. */
-    public static HashMap entityEggs = new LinkedHashMap();
+    public static HashMap<Integer, EntityEggInfo> entityEggs = new LinkedHashMap<Integer, EntityEggInfo>();
 
     /**
      * adds a mapping between Entity classes and both a string representation and an ID
      */
-    public static void addMapping(Class par0Class, String par1Str, int par2)
+    public static void addMapping(Class<?> par0Class, String par1Str, int par2)
     {
         stringToClassMapping.put(par1Str, par0Class);
         classToStringMapping.put(par0Class, par1Str);
@@ -51,7 +50,7 @@ public class customEntityList {
     /**
      * Adds a entity mapping with egg info.
      */
-    public static void addMapping(Class par0Class, String par1Str, int par2, int par3, int par4)
+    public static void addMapping(Class<?> par0Class, String par1Str, int par2, int par3, int par4)
     {
         addMapping(par0Class, par1Str, par2);
         entityEggs.put(Integer.valueOf(par2), new EntityEggInfo(par2, par3, par4));
@@ -66,7 +65,7 @@ public class customEntityList {
 
         try
         {
-            Class oclass = (Class)stringToClassMapping.get(par0Str);
+            Class<?> oclass = (Class<?>)stringToClassMapping.get(par0Str);
 
             if (oclass != null)
             {
@@ -105,10 +104,10 @@ public class customEntityList {
             par0NBTTagCompound.removeTag("Type");
         }
 
-        Class oclass = null;
+        Class<?> oclass = null;
         try
         {
-            oclass = (Class)stringToClassMapping.get(par0NBTTagCompound.getString("id"));
+            oclass = (Class<?>)stringToClassMapping.get(par0NBTTagCompound.getString("id"));
 
             if (oclass != null)
             {
@@ -151,7 +150,7 @@ public class customEntityList {
 
         try
         {
-            Class oclass = getClassFromID(par0);
+            Class<?> oclass = getClassFromID(par0);
 
             if (oclass != null)
             {
@@ -176,16 +175,16 @@ public class customEntityList {
      */
     public static int getEntityID(Entity par0Entity)
     {
-        Class oclass = par0Entity.getClass();
+        Class<? extends Entity> oclass = par0Entity.getClass();
         return classToIDMapping.containsKey(oclass) ? ((Integer)classToIDMapping.get(oclass)).intValue() : 0;
     }
 
     /**
      * Return the class assigned to this entity ID.
      */
-    public static Class getClassFromID(int par0)
+    public static Class<?> getClassFromID(int par0)
     {
-        return (Class)IDtoClassMapping.get(Integer.valueOf(par0));
+        return (Class<?>)IDtoClassMapping.get(Integer.valueOf(par0));
     }
 
     /**
@@ -201,7 +200,7 @@ public class customEntityList {
      */
     public static String getStringFromID(int par0)
     {
-        Class oclass = getClassFromID(par0);
+        Class<?> oclass = getClassFromID(par0);
         return oclass != null ? (String)classToStringMapping.get(oclass) : null;
     }
 

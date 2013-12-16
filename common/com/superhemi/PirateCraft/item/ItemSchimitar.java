@@ -113,9 +113,10 @@ public class ItemSchimitar extends Item
         return this.toolMaterial.getToolCraftingMaterial() == par2ItemStack.itemID ? true : super.getIsRepairable(par1ItemStack, par2ItemStack);
     }
 
-    public Multimap getItemAttributeModifiers()
+    public Multimap<String, AttributeModifier> getItemAttributeModifiers()
     {
-        Multimap multimap = super.getItemAttributeModifiers();
+        @SuppressWarnings("unchecked")
+		Multimap<String, AttributeModifier> multimap = super.getItemAttributeModifiers();
         multimap.put(SharedMonsterAttributes.attackDamage.getAttributeUnlocalizedName(), new AttributeModifier(field_111210_e, "Weapon modifier", (double)this.weaponDamage, 0));
         return multimap;
     }

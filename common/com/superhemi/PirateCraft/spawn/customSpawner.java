@@ -3,6 +3,8 @@ package com.superhemi.PirateCraft.spawn;
 import java.util.Iterator;
 import java.util.List;
 
+import com.superhemi.PirateCraft.BaseForgePC;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -34,7 +36,7 @@ public class customSpawner extends Item
     {
         super(par1);
         this.setHasSubtypes(true);
-        this.setCreativeTab(CreativeTabs.tabMisc);
+        this.setCreativeTab(BaseForgePC.tabsPC);
     }
 
     public String getItemDisplayName(ItemStack par1ItemStack)
@@ -208,7 +210,8 @@ public class customSpawner extends Item
         return par2 > 0 ? this.theIcon : super.getIconFromDamageForRenderPass(par1, par2);
     }
 
-    @SideOnly(Side.CLIENT)
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	@SideOnly(Side.CLIENT)
 
     /**
      * returns a list of items with the same ID, but different meta (eg: dye returns 16 items)
@@ -228,6 +231,6 @@ public class customSpawner extends Item
     public void registerIcons(IconRegister par1IconRegister)
     {
         super.registerIcons(par1IconRegister);
-        this.theIcon = par1IconRegister.registerIcon(this.getIconString() + "_overlay");
+        this.theIcon = par1IconRegister.registerIcon("customSpawner_overlay");
     }
 }
