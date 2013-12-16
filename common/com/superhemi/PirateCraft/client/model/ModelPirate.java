@@ -5,6 +5,16 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.MathHelper;
 
+/**
+ * PirateCraft
+ * 
+ * ModelPirate
+ * 
+ * @author superhemi
+ *@license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ *
+ */
+
 public class ModelPirate extends ModelBase
 {
 	  //fields
