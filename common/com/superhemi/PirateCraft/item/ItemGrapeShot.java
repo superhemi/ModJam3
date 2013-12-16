@@ -19,6 +19,7 @@ public class ItemGrapeShot extends Item
         this.maxStackSize = 16;
         this.setUnlocalizedName(Strings.RESOURCE_PREFIX + Strings.GRAPESHOT_NAME);
         this.setCreativeTab(BaseForgePC.tabsPC);
+        this.setTextureName(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
     }
 
     /**
